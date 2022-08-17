@@ -44,6 +44,9 @@
   npm install xxx
 - 项目依赖安装，并写入package.json的devDependencies中  
   npm install –D xxx
+
+### ** npm install默认不加或者 -save, 依赖放在package.json文件中的dependencies作为运行时依赖；npm install 加 -D 或者 -save-dev, 依赖放在package.json文件中的devDependencies作为开发时依赖  
+  
 - 项目本次安装依赖，临时使用淘宝镜像  
   npm install --registry=https://registry.npmmirror.com
 - 安装某个依赖包（下面命令指定了版本@1.0.0），临时使用淘宝镜像  
