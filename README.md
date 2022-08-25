@@ -128,6 +128,50 @@ ncu -u
   "base": "1.0.1-1.5.9"  
   例如 1.0.1-1.5.9 可以使用 1.0.1到1.5.9之间的任意版本  
 
+  ## package.json文件说明  
+  - 生成package.json文件
+    npm init --yes
+  - 详细说明  
+    {  
+  "name": "npm-learn", //项目名  
+  "version": "1.0.0", //版本号  
+  "description": "npm-learn",//项目概述  
+  "main": "index.js",//入口文件  
+  "scripts": {  //调试指令，如：npm run test & npm run hello   
+    "test": "echo \"Error: no test specified\" && exit 1",  
+    "hello": "node -v"    
+  },  
+  "repository": { //代码提交仓库地址  
+    "type": "git",  
+    "url": "git+https://github.com/0X2045Z/npm-learn.git"  
+  },  
+  "keywords": [],  
+  "author": "",  
+  "license": "ISC",  
+  "bugs": {  
+    "url": "https://github.com/0X2045Z/npm-learn/issues"  
+  },  
+  "homepage": "https://github.com/0X2045Z/npm-learn#readme"  
+  //下载代码并指定运行时依赖（npm install XXX -save）后，代码会放在新生成的node_modules文件夹中  
+  //并在package.json文件生成配置如下  
+  "dependencies": {  
+    "jquery": "^3.6.0"  
+  }  
+  //下载代码并指定运行时依赖（npm install XXX -save-dev）后，代码会放在新生成的node_modules文件夹中  
+  //并在package.json文件生成配置如下   
+  "devDependencies": {  
+    "jquery": "^3.6.0"  
+  }   
+}  
+- 执行npm install 会根据package.json文件下载全部依赖
+
+## npm安装包的使用
+- 使用CommonJs，CommonJs中很大一部分功能就是对模块的管理
+- 使用require语句导入包  
+  const jq = require('jequery')    
+  将自动去node_modules文件夹中找jequery，并赋值给jq
+- 新的ES6，可以使用import导入包
+
 
 
 
